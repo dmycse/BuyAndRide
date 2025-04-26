@@ -7,13 +7,13 @@ export const categoryType = defineType({
   fields: [
     defineField({
       name: 'name',
-      title: 'Category Name',
+      title: 'Name',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'id',
-      title: 'Category ID',
+      name: 'slug',
+      title: 'Slug',
       type: 'slug',
       options: {
         source: 'name',

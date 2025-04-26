@@ -53,7 +53,7 @@ export const productType = defineType({
     }),
     defineField({
       name: 'slug',
-      title: 'Product ID',
+      title: 'Product Slug',
       type: 'slug',
       options: {
         source: 'title',
@@ -64,12 +64,6 @@ export const productType = defineType({
         },
       validation: (rule) => rule.required(),
     }),
-    defineField({
-      name: 'createdAt',
-      type: 'datetime',
-      initialValue: () => new Date().toISOString(),
-      validation: (rule) => rule.required(),
-    })
   ],
 });
 
