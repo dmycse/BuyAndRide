@@ -1,8 +1,10 @@
+import { colors } from './node_modules/@sanity/runtime-cli/node_modules/chalk/source/index.d';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    './src/**/*.{html,js,ts,jsx,tsx}',
+    "./app/**/*.{js,ts,jsx,tsx,css}",
+    "./components/**/*.{js,ts,jsx,tsx,css}",
   ],
   theme: {
     container: {
@@ -15,11 +17,22 @@ const config: Config = {
       lg: '960px',
       xl: '1440px',
     },
-    fontFamily: {
-      rajdhani: ['var(--font-rajdhani)', 'sans-serif'],
-      mona: ['var(--font-mona)', 'sans-serif'],
+    extend: {
+      fontFamily: {
+        rajdhani: ['var(--font-rajdhani)', 'sans-serif'],
+        mona: ['var(--font-mona)', 'sans-serif'],
+      },
+      colors: {
+        primary: {
+          DEFAULT: '#222222',
+          hover: '#2f2f2f'
+        },
+        accent: {
+          DEFAULT: 'ed1d24',
+          hover: '#d6001c'
+        }
+      },
     },
-    extend: {},
   },
   plugins: [],
 }
