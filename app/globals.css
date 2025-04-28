@@ -122,3 +122,18 @@
 .swiper-horizontal .swiper-pagination-bullet {
   @apply bg-accent;
 }
+
+.swiper .swiper-button-prev {
+  @apply top-44 -left-1;
+}
+
+.swiper .swiper-button-next {
+  @apply top-44 -right-1;
+}
+
+.swiper .swiper-button-prev:after,
+.swiper .swiper-button-next:after {
+  @apply text-2xl text-accent;
+}
+
+
