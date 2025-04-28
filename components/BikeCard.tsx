@@ -4,19 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { AddToCartBtn } from "@/components/AddToCartBtn";
-import type { Product } from "@/components/PopularBikes";
 
 import { urlFor } from "@/sanity/client";
 
-import { CgEye, CgShoppingBag } from "react-icons/cg";
+import { CgEye, CgShoppingCart } from "react-icons/cg";
+import { TBike } from "@/components/PopularBikes";
 
 
-type BikeProps = { bike: Omit<Product, 'price_id' | 'description'> }
+export const BikeCard = ({ bike } : { bike: TBike }) => {
 
-
-export const BikeCard = ({ bike }: BikeProps) => {
-
-  const popularBikeCat = bike?.categories.find(cat => cat.name === 'popular');
+  const popularBikeCat = bike?.categories?.find(cat => cat.name === 'popular');
 
   return (
     <div className="group">
@@ -35,16 +32,17 @@ export const BikeCard = ({ bike }: BikeProps) => {
             </span>
             )}
             <Image 
-              src={urlFor(bike.images[0]).url()} 
+              src={urlFor(bike.images?.[0]!).auto("format").url()} 
               alt='popular bike image'
               width={240} 
               height={147}
+              priority
             />
         </div>
         <div className="absolute inset-0 flex-center gap-3 opacity-0
                         group-hover/image:opacity-100 transition-all duration-500"
         >
-          <AddToCartBtn />
+          <AddToCartBtn btnStyles="btn-icon btn-accent" icon={<CgShoppingCart size={20} />} />
           <Link href={`/product/${bike.slug}`}>
             <button className="btn-icon btn-primary">
               <CgEye size={20} />
@@ -53,7 +51,7 @@ export const BikeCard = ({ bike }: BikeProps) => {
         </div>
       </div>
       <h5 className="mb-2 text-gray-400 font-semibold">
-        {bike?.categories[0].name} bike
+        {bike.categories?.[0].name} bike
       </h5>
       <h4 className="mb-1">
         {bike.title}
