@@ -1,7 +1,7 @@
 'use client';
 
 import { BikeCard } from "@/components/BikeCard";
-import type { Product } from "@/components/PopularBikes";
+import { TBike } from "@/components/PopularBikes";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
@@ -10,22 +10,11 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 type PopularBikesCarouselProps = {
-  bikes: Product[]
-}
+  bikes: TBike[];
+};
 
 
 export const PopularBikesCarousel = ( { bikes }: PopularBikesCarouselProps) => {
-
-  let bikePropsforSwiper = bikes.map(bike => {
-    return {
-      _id: bike._id,
-      title: bike.title,
-      images: bike.images,
-      categories: bike.categories,
-      price: bike.price,
-      slug: bike.slug
-    }
-  })
 
   return (
     <Swiper 
@@ -42,7 +31,7 @@ export const PopularBikesCarousel = ( { bikes }: PopularBikesCarouselProps) => {
       navigation
       className="popular-bikes-slider mb-8"
   >
-      {bikePropsforSwiper.map(bike => (
+      {bikes.map(bike => (
         <SwiperSlide key={bike._id}>
           <BikeCard bike={bike} />
         </SwiperSlide>
