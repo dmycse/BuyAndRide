@@ -2,8 +2,6 @@ import Link from "next/link";
 import { client } from "@/sanity/client";
 import { PopularBikesCarousel } from "@/components/PopularBikesCarousel";
 
-const queryUrl = 'https://anea6r0x.api.sanity.io/v2025-04-27/data/query/production?query=*%5B_type+%3D%3D%27product%27+%26%26%0A++references%28*%5B_type+%3D%3D+%27category%27+%26%26+name+%3D%3D+%27popular%27%5D._id%2C+categories%29%0A+%5D%7B%0A++_id%2C%0A++++title%2C%0A++++description%2C%0A++++images%2C%0A++++price%2C%0A++++price_id%2C%0A++++%22slug%22%3A+slug.current%2C%0A++++%22categories%22%3A+categories%5B%5D-%3E%7B%0A++++name%0A++++%7D%0A%7D&perspective=drafts'
-
 const PRODUCTS_QUERY = `
   *[_type =='product' &&
   references(*[_type == 'category' && name == 'popular']._id, categories)
@@ -32,7 +30,14 @@ const PRODUCTS_QUERY = `
   };
 
 const getData = async (): Promise<Product[]> => {
-  const data = await client.fetch(PRODUCTS_QUERY);
+  const data = await client.fetch(
+    PRODUCTS_QUERY,
+    {},
+    {
+      cache: 'force-cache',
+      next: {tags: ['products'], revalidate: 60},
+    },
+  );
   return data;
 }
 
