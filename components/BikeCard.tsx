@@ -19,25 +19,20 @@ export const BikeCard = ({ bike }: BikeProps) => {
   const popularBikeCat = bike?.categories.find(cat => cat.name === 'popular');
 
   return (
-    <div className="group cursor-pointer">
-      <div className="mb-5 p-4 h-82
-                      relative 
-                      border 
-                      overflow-hidden"
+    <div className="group">
+      <div className="mb-5 p-4 h-82 group/image relative
+                      border overflow-hidden cursor-pointer"
       >
-        <div className="size-full
-                        flex-center
-                       bg-primary/5 group-hover:bg-primary/10 
+        <div className="size-full flex-center
+                       bg-primary/5 group-hover/image:bg-primary/10
                         transition-all duration-300"
         >
           {popularBikeCat && (
-            <div className="px-3
-                            absolute top-8 left-8
-                            text-sm text-white font-medium uppercase
-                           bg-accent"
+            <span className="px-3 absolute top-8 left-8
+                            text-sm text-white font-medium uppercase bg-accent"
             >
               Popular
-            </div>
+            </span>
             )}
             <Image 
               src={urlFor(bike.images[0]).url()} 
@@ -46,10 +41,8 @@ export const BikeCard = ({ bike }: BikeProps) => {
               height={147}
             />
         </div>
-        <div className="absolute inset-0  
-                        flex-center gap-3
-                        opacity-0 group-hover:opacity-100
-                        transition-all duration-500"
+        <div className="absolute inset-0 flex-center gap-3 opacity-0
+                        group-hover/image:opacity-100 transition-all duration-500"
         >
           <AddToCartBtn />
           <Link href={`/product/${bike.slug}`}>
