@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Rajdhani, Mona_Sans } from "next/font/google";
+import { SanityLive } from "@/sanity/lib/live";
 import "./globals.css";
 
 const rajdhani = Rajdhani({
@@ -29,6 +30,7 @@ export default function RootLayout({
         className={`${rajdhani.variable} ${mona.variable} antialiased`}
       >
         {children}
+        <SanityLive />
       </body>
     </html>
   );

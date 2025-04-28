@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typegen": "sanity schema extract --path=./src/sanity/schema.json && sanity typegen generate"
   },
   "dependencies": {
     "@sanity/image-url": "^1.1.0",
@@ -19,8 +20,10 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
+    "react-is": "^19.1.0",
     "sanity-plugin-documents-pane": "^2.4.0",
     "stripe": "^18.0.0",
+    "styled-components": "^6.1.17",
     "swiper": "^11.2.6",
     "tailwind-merge": "^3.2.0",
     "use-shopping-cart": "^3.2.0"
