@@ -1,52 +1,32 @@
 import Link from "next/link";
-import { client } from "@/sanity/client";
+import { notFound } from "next/navigation";
 import { PopularBikesCarousel } from "@/components/PopularBikesCarousel";
 
-const PRODUCTS_QUERY = `
-  *[_type =='product' &&
-  references(*[_type == 'category' && name == 'popular']._id, categories)
-  ]{
-    _id,
-    title,
-    description,
-    images,
-    price,
-    price_id,
-    "slug": slug.current,
-    "categories": categories[]->{name}
-  }`
+// import { client } from "@/sanity/client";
+import { Product } from "@/sanity/types";
+import { PRODUCTS_QUERY } from "@/sanity/lib/queries";
+import { sanityFetch } from "@/sanity/lib/live";
 
-  export type Product = {
-    _id: string;
-    title: string;
-    description: string;
-    images: string[];
-    price: string;
-    price_id: string | null;
-    slug: string;
-    categories: {
-      name: string;
-    }[];
-  };
+// const options = { next: { revalidate: 60 } };
 
-const getData = async (): Promise<Product[]> => {
-  const data = await client.fetch(
-    PRODUCTS_QUERY,
-    {},
-    {
-      cache: 'force-cache',
-      next: {tags: ['products'], revalidate: 60},
-    },
-  );
-  return data;
-}
+// const getData = async (): Promise<Product[]> => {
+//   const data = await client.fetch(PRODUCTS_QUERY, {}, options);
+//   return data;
+// }
+
+export type TBike = Pick<Product, '_id' | 'title' | 'description' |'price' | 'images' | 'slug' | 'categories'>; 
+ 
 
 export const PopularBikes = async () => {
 
-  const bikes = await getData();
-  // console.log("🚀 ~ PopularBikes ~ bikes:", bikes);
-  
+  // const bikes = await getData();
+  const {data: bikes}: { data: TBike[] }  = await sanityFetch({query: PRODUCTS_QUERY});
 
+  if (!bikes) {
+      notFound();
+  }
+      
+ 
   return (
     <section className="py-24">
       <div className="custom-container">
