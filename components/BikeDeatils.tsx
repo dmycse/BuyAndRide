@@ -14,6 +14,33 @@ import {
   ShieldCheck, 
 } from 'lucide-react';
 
+const productAdvantages = [
+  {
+    id: 1,
+    text: 'Free Shipping on orders over $150',
+    icon: <PackageCheck size={25} className='text-accent'/>
+  },
+  {
+    id: 2,
+    text: 'Free return for 30 days',
+    icon: <RefreshCw size={25} className='text-accent'/>
+  },
+  {
+    id: 3,
+    text: 'The bicycle is partially assembled',
+    icon: <Bike size={25} className='text-accent'/>
+  },
+  {
+    id: 4,
+    text: '2 years warranty',
+    icon: <ShieldCheck size={25} className='text-accent'/>
+  },
+  {
+    id: 5,
+    text: 'Delivery 2-3 working days',
+    icon: <Clock size={25} className='text-accent'/>
+  },
+];
 
 type BikeDeatilsProps = {
   bike: Product;
@@ -40,7 +67,7 @@ export const BikeDeatils = ({ bike }: BikeDeatilsProps) => {
                   priority
                 />
               </div>
-              <div className="flex-1 flex flex-row xl:flex-col items-start gap-10">
+              <div className="flex-1 flex flex-col lg:flex-row xl:flex-col items-start gap-10">
                 <div className="w-2/3 xl:w-full space-y-6">
                   <h3>{bike.title}</h3>
                   <p className='font-semibold text-lg'>${bike.price}</p>
@@ -52,26 +79,13 @@ export const BikeDeatils = ({ bike }: BikeDeatilsProps) => {
                   />
                 </div>
                 <div className="flex flex-col items-start gap-6">
-                  <div className="flex-center gap-3">
-                    <PackageCheck size={25} className='text-accent'/>
-                    <span>Free Shipping on orders over $150</span>
-                  </div>
-                  <div className="flex-center  gap-3">
-                    <RefreshCw size={25} className='text-accent'/>
-                    <span>Free return for 30 days</span>
-                  </div>
-                  <div className="flex-center  gap-3">
-                    <Bike size={25} className='text-accent'/>
-                    <span>The bicycle is partially assembled</span>
-                  </div>
-                  <div className="flex-center  gap-3">
-                    <ShieldCheck size={25} className='text-accent'/>
-                    <span>2 years warranty</span>
-                  </div>
-                  <div className="flex-center  gap-3">
-                    <Clock size={25} className='text-accent'/>
-                    <span>Delivery 2-3 working days</span>
-                  </div>
+                  { productAdvantages.map(adv => (
+                      <div key={adv.id} className="flex-center gap-3">
+                        {adv.icon}
+                        <span>{adv.text}</span>
+                      </div>
+                    ))
+                  }
                 </div>
               </div>
             </div>
