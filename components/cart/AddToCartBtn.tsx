@@ -32,7 +32,7 @@ export const AddToCartBtn = ({ bike, currency='USD', btnStyles, title, icon }: A
 
   const handleAddToCart = () => {
     addItem(bikeItem);
-    toast.success('Product added to the cart');
+    toast.success(`${bikeItem.name} has been added to the cart`);
   }
   
   return (
