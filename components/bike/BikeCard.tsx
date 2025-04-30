@@ -2,14 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
-import { AddToCartBtn } from "@/components/AddToCartBtn";
+import type { TBike } from "@/components/PopularBikes";
+import { AddToCartBtn } from "@/components/cart/AddToCartBtn";
 
 import { urlFor } from "@/sanity/client";
 
 import { CgEye, CgShoppingCart } from "react-icons/cg";
-import { TBike } from "@/components/PopularBikes";
-
 
 export const BikeCard = ({ bike } : { bike: TBike }) => {
 
@@ -42,7 +40,11 @@ export const BikeCard = ({ bike } : { bike: TBike }) => {
         <div className="absolute inset-0 flex-center gap-3 opacity-0
                         group-hover/image:opacity-100 transition-all duration-500"
         >
-          <AddToCartBtn btnStyles="btn-icon btn-accent" icon={<CgShoppingCart size={20} />} />
+          <AddToCartBtn
+            bike={bike} 
+            btnStyles="btn-icon btn-accent" 
+            icon={<CgShoppingCart size={20} />} 
+          />
           <Link href={`/product/${bike.slug}`}>
             <button className="btn-icon btn-primary">
               <CgEye size={20} />
