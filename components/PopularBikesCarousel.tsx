@@ -1,7 +1,7 @@
 'use client';
 
-import { BikeCard } from "@/components/BikeCard";
-import { TBike } from "@/components/PopularBikes";
+import { BikeCard } from "@/components/bike/BikeCard";
+import type { TBike } from "@/components/PopularBikes";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
