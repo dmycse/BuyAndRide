@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { sanityFetch } from "@/sanity/lib/live";
 import { PRODUCT_QUERY } from '@/sanity/lib/queries';
-import { BikeDeatils } from '@/components/BikeDeatils';
+import { BikePage } from '@/components/bike/BikePage';
 
 type ProductPageProps = {
   params: Promise<{ slug: string }>;
@@ -25,7 +25,7 @@ async function ProductPage ({ params }: ProductPageProps) {
   }
 
   return (
-    <BikeDeatils bike={bike} />
+    <BikePage bike={bike} />
   )
 }
 
