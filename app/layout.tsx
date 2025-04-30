@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Rajdhani, Mona_Sans } from "next/font/google";
 import { SanityLive } from "@/sanity/lib/live";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
+import { CartProvider } from "@/components/providers/CartProvider";
+import { Toaster } from "@/components/ui/sonner"
 
 const rajdhani = Rajdhani({
   variable: "--font-rajdhani",
@@ -15,8 +19,8 @@ const mona = Mona_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Buy & Ride | Great Bycicles & Parts & Accessories",
-  description: "On-line Shop of Bycicles, Bycicles Parts and Accessorie ",
+  title: "Buy & Ride | Most Popular Bycicles & Accessories",
+  description: "On-line Shop of Most Popular Bycicles, Bycicles Parts and Accessorie ",
 };
 
 export default function RootLayout({
@@ -26,11 +30,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${rajdhani.variable} ${mona.variable} antialiased`}
-      >
-        {children}
-        <SanityLive />
+      <body className={`${rajdhani.variable} ${mona.variable} antialiased`}>
+        <CartProvider>
+          <Header />
+          <main>
+            {children}
+          </main>
+          <SanityLive />
+          <Footer />
+          <Toaster richColors />
+        </CartProvider>
       </body>
     </html>
   );
