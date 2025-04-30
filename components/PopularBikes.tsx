@@ -28,7 +28,7 @@ export const PopularBikes = async () => {
       
  
   return (
-    <section className="py-24">
+    <section className="py-10">
       <div className="custom-container">
         <h2 className="text-center">Most Popular Bikes</h2>
         <p className="mb-8 text-center">The World's Premium Bikes Collection In One Place</p>
