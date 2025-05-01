@@ -63,7 +63,7 @@
 
 @utility btn {
   padding-inline: 2rem;
-  height: 3rem;
+  height: 2.5rem;
   @apply flex-center;
   color: white;
   font-weight: 600;
