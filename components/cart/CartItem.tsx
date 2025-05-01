@@ -1,16 +1,15 @@
 'use client';
 
 import Image from "next/image";
+import { urlFor } from "@/sanity/client";
 import type { CartEntry } from "use-shopping-cart/core";
 import { useShoppingCart } from "use-shopping-cart";
 
 import { FaPlus, FaMinus, FaTrashCan } from 'react-icons/fa6'
-import { urlFor } from "@/sanity/client";
-import { use } from "react";
 
 export const CartItem = ({ item }: { item: CartEntry }) => {
   
-  const {removeItem, incrementItem, decrementItem} =useShoppingCart();
+  const {removeItem, incrementItem, decrementItem} = useShoppingCart();
     
   return (
     <article
