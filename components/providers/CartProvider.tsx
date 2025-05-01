@@ -7,9 +7,9 @@ export const CartProvider = ({ children }: { children: React.ReactNode}) => {
     <CProvider
       mode="payment"
       cartMode="client-only"
-      stripe=''
-      successUrl="payment-success"
-      cancelUrl="payment-error"
+      stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
+      successUrl="http://localhost:3001/stripe/payment-success"
+      cancelUrl="http://localhost:3001/stripe/payment-error"
       language="en-US"
       currency="USD"
       billingAddressCollection={true}
