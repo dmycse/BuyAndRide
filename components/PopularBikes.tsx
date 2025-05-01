@@ -14,7 +14,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 //   return data;
 // }
 
-export type TBike = Pick<Product, '_id' | 'title' | 'description' |'price' | 'images' | 'slug' | 'categories'>; 
+export type TBike = Pick<Product, '_id' | 'title' | 'description' |'price' | 'price_id' | 'images' | 'slug' | 'categories'>; 
  
 
 export const PopularBikes = async () => {
