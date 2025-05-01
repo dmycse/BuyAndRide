@@ -33,9 +33,7 @@ export default function RootLayout({
       <body className={`${rajdhani.variable} ${mona.variable} antialiased`}>
         <CartProvider>
           <Header />
-          <main>
             {children}
-          </main>
           <SanityLive />
           <Footer />
           <Toaster richColors />
