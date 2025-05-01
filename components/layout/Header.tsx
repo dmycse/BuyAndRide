@@ -9,7 +9,7 @@ export const Header = () => {
       <div className="custom-container flex-center justify-between">
         <NavLogo />
         <div className="flex-center gap-6">
-          <Navbar />
+          <Navbar componenStyles='flex gap-9' />
           <NavCart />
           <CartSidebar />
         </div>

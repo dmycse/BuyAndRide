@@ -1,7 +1,39 @@
-import React from 'react'
+'use client';
 
-export const Navbar = () => {
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navLinks = [
+  { name: 'Home', path: '/' },
+  { name: 'Our Bikes', path: '/our-bikes' },
+  { name: 'Favorites', path: '/favorites' },
+];
+
+type NavbarProps = {
+  componenStyles: string;
+};
+
+
+export const Navbar = ({ componenStyles }: NavbarProps ) => {
+
+  const pathname = usePathname();
+
   return (
-    <div>bar</div>
+    <nav className={`${componenStyles}`}>
+      {navLinks.map(link => (
+        <Link 
+          key={link.name} 
+          href={link.path} 
+          className={`
+            ${link.path === pathname && 'text-accent'} 
+            underline underline-offset-8 decoration-transparent 
+            hover:text-primary hover:decoration-2 hover:decoration-accent-hover
+            transition-all duration-500
+          `}
+        >
+          {link.name}
+        </Link>
+      ))}
+    </nav>
   )
 }
