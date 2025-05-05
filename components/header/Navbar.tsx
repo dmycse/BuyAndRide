@@ -2,12 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'Our Bikes', path: '/our-bikes' },
-  { name: 'Favorites', path: '/favorites' },
-];
+import { navLinks } from "@/components/header/navLinks";
 
 type NavbarProps = {
   componenStyles: string;
