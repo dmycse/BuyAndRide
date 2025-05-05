@@ -30,7 +30,7 @@ export const CartSidebar = () => {
   return (
     <Sheet 
       open={shouldDisplayCart} 
-      onOpenChange={() =>handleCartClick()}
+      onOpenChange={() => handleCartClick()}
     >
       <SheetContent className="p-2 bg-white" aria-describedby={undefined}>
         <SheetHeader>
