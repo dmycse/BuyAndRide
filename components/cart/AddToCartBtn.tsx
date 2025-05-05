@@ -44,7 +44,7 @@ export const AddToCartBtn = ({ bike, currency='USD', btnStyles, title, icon }: A
 
   const handleIncrementQuantity = () => {
     incrementItem(bikeItem.id);
-    toast.success(`${bikeItem.name} has been added in the cart`);
+    toast.success(`${bikeItem.name} has been added to the cart`);
   };
   
   return (
