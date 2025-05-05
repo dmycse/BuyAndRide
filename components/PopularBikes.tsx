@@ -30,7 +30,7 @@ export const PopularBikes = async () => {
   return (
     <section className="py-10">
       <div className="custom-container">
-        <h2 className="text-center">Most Popular Bikes</h2>
+        <h2 className="text-center">Most Wanted Bikes</h2>
         <p className="mb-8 text-center">The World's Premium Bikes Collection In One Place</p>
         <PopularBikesCarousel bikes={bikes} />
         <Link href="/our-bikes">
