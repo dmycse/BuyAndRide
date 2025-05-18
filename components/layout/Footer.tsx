@@ -46,8 +46,8 @@ export const Footer = () => {
             <span>All rights reserved</span>
           </div>
           <p>
-            <span className="border border-white/50 bg-white/60 text-primary/60 font-semibold">&nbsp;DMY&nbsp;</span> 
-            <span className="text-white/50 border border-white/60">&nbsp;DEV&nbsp;</span>
+            <span className="border border-transparent bg-white/80 text-primary font-semibold">&nbsp;DMY&nbsp;</span> 
+            <span className="text-white/90 border border-white/60">&nbsp;DEV&nbsp;</span>
           </p>
         </div>
       </div>
