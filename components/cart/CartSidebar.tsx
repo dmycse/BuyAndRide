@@ -20,7 +20,7 @@ export const CartSidebar = () => {
     cartDetails,
     shouldDisplayCart,
     totalPrice,
-    handleCartClick 
+    handleCartClick,
   } = useShoppingCart();
 
   const sortedCartDetails = cartDetails && 
