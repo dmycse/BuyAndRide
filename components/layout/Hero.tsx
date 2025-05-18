@@ -10,10 +10,10 @@ export const Hero = () => {
         <div className="size-full flex items-center justify-between">
           <div className="w-full xl:max-w-[36rem] flex flex-col justify-center items-start gap-6">
             <h1 className="text-center xl:text-left">
-              Where <span>Joyful</span> Cycling Beging
+              Where Every <span className="text-accent">Ride</span> Begins with a Smile
             </h1>
             <p className="mb-5 mx-auto text-center xl:text-left xl:mx-0 text-lg max-w-[36rem]">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum repellendus accusantium ipsa sit nulla maiores magnam non quia modi? Mollitia.
+              Discover high-quality bikes for every rider. Shop road, mountain, and electric bikes with fast shipping, expert support, and great prices.
             </p>
             <div className="w-full flex-center xl:justify-start">
               <Link href='/our-bikes' className="btn btn-accent">
