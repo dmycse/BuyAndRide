@@ -2,7 +2,7 @@
 
 import { use, useState } from "react";
 import { TWishlistContext, WishlistContext } from "@/components/providers/WishListContextProvider";
-import { WishlistSidebar } from "@/components/wishlist/WishlistSidebar";
+import { WishListSidebar } from "@/components/wishlist/WishListSidebar";
 import { MdDirectionsBike } from "react-icons/md";
 
 
@@ -27,7 +27,7 @@ export const NavWishlist = () => {
         </span>
       </button>
       {wishlistIsOpen && (
-        <WishlistSidebar 
+        <WishListSidebar 
           isOpen={wishlistIsOpen} 
           setIsOpen={setWishlistIsOpen}
         />
