@@ -31,7 +31,7 @@ export const PopularBikes = async () => {
     <section className="py-10">
       <div className="custom-container">
         <h2 className="text-center">Most Wanted Bikes</h2>
-        <p className="mb-8 text-center">The World's Premium Bikes Collection In One Place</p>
+        <p className="mb-8 text-center">The World&apos;s Premium Bikes Collection In One Place</p>
         <PopularBikesCarousel bikes={bikes} />
         <Link href="/our-bikes">
           <button className="mx-auto btn btn-accent">View All Bikes</button>

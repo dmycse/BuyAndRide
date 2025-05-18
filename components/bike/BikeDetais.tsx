@@ -15,13 +15,15 @@ export const BikeDetais = async ({ bike }: BikeDetaisProps) => {
     <div className="flex flex-col xl:flex-row gap-8">
       
       <div className="h-80 lg:h-120 xl:h-[75vh] xl:w-175 xl:flex-1 flex-center bg-primary/5">
-        <Image 
-          src={urlFor(bike.images?.[0]!).auto("format").url()} 
-          alt='bike image'
-          width={473} 
-          height={290}
-          priority
-        />
+        {bike && bike.images?.[0] && (
+          <Image 
+            src={urlFor(bike.images[0]).auto("format").url()} 
+            alt='bike image'
+            width={473} 
+            height={290}
+            priority
+          />
+        )}
       </div>
 
       <div className="xl:h-auto flex-1 flex flex-col lg:flex-row xl:flex-col items-start gap-8">

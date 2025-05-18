@@ -14,11 +14,11 @@ type AddToCartBtnProps = {
 }
 
 export const AddToCartBtn = ({ bike, currency='USD', btnStyles, title, icon }: AddToCartBtnProps) => {// // console.log("🚀 ~ AddToCartBtn ~ bike:", bike);
+  
+  const { cartDetails, addItem, decrementItem, incrementItem } = useShoppingCart();
 
   if (!bike) return null;
 
-  const { cartDetails, addItem, decrementItem, incrementItem } = useShoppingCart();
-  
   const bikeInCart = cartDetails && cartDetails?.[bike.price_id || bike._id];
 
   const bikeItem = {

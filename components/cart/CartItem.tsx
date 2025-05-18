@@ -18,14 +18,16 @@ export const CartItem = ({ item }: { item: CartEntry }) => {
       className="mb-4 w-full h-30 flex items-center gap-8 max-md:gap-2 shadow-sm"
     >
       <div className="w-[110px] h-[110px] relative">
-        <Image 
-          src={urlFor(item.images?.[0]!).auto("format").url()} 
-          alt={item.name} 
-          fill={true}
-          priority
-          sizes='(max-width: 110px) 110px, 110px'
-          className="object-contain"
-        /> 
+        {item.images &&
+          <Image 
+            src={urlFor(item.images[0]).auto("format").url()} 
+            alt={item.name} 
+            fill={true}
+            priority
+            sizes='(max-width: 110px) 110px, 110px'
+            className="object-contain"
+          /> 
+        }
       </div>
 
       <div className="flex-1 w-full ml-2 flex flex-col justify-center gap-4">

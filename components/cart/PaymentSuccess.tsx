@@ -1,18 +1,23 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useShoppingCart } from "use-shopping-cart";
 
 export default function PaymentSuccess() {
 
   const { cartCount, clearCart } = useShoppingCart();
 
-  useEffect(() => {
-    if (typeof cartCount === 'number') {
+  const onClearCart = useCallback(() => {
+    if (cartCount !== undefined && cartCount > 0) {
       clearCart();
     }
   }, [cartCount]);
+
+
+  useEffect(() => {
+    onClearCart();
+  }, [onClearCart]);
 
   return (
     <div className="custom-container h-screen flex-center flex-col gap-4">

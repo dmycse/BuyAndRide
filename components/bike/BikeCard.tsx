@@ -11,7 +11,7 @@ import { CgEye, CgShoppingCart } from "react-icons/cg";
 
 export const BikeCard = ({ bike } : { bike: TBike }) => {
 
-  const popularBikeCat = bike?.categories?.find(cat => cat.name === 'popular');
+  const popularBikeCat = bike && bike.categories?.find(cat => cat.name === 'popular');
 
   return (
     <div className="group">
@@ -29,13 +29,15 @@ export const BikeCard = ({ bike } : { bike: TBike }) => {
               Popular
             </span>
             )}
-            <Image 
-              src={urlFor(bike.images?.[0]!).auto("format").url()} 
-              alt='popular bike image'
-              width={240} 
-              height={147}
-              priority
-            />
+            {bike.images && (
+              <Image 
+                src={urlFor(bike.images[0]).auto("format").url()} 
+                alt='popular bike image'
+                width={240} 
+                height={147}
+                priority
+              />
+            )}
         </div>
         <div className="absolute inset-0 flex-center gap-3 opacity-0
                         group-hover/image:opacity-100 transition-all duration-500"

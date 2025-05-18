@@ -19,10 +19,11 @@ export const AddToWishListBtn = ({ bike, btnStyles = 'btn', title}: AddToWishLis
   const [inWishList, setInWishList] = useState(false);
   const [isPending, startTransition] = useTransition();
 
+  const bikeInWishlist = wishlist?.some(item => item._id === bike._id);
+
   useEffect(() => {
-    const bikeInWishlist = wishlist?.some(item => item._id === bike._id)
     setInWishList(bikeInWishlist);
-  }, [wishlist]);
+  }, [bikeInWishlist]);
 
   if (!bike) return null;
   
