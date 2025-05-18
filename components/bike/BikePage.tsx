@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { BikeDetais } from './BikeDetais';
-import { Product } from '@/sanity/types';
 import { ChevronLeft } from 'lucide-react';
 import type { TBike } from '@/components/PopularBikes';
 
