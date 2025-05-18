@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, use } from "react";
+import { use } from "react";
 import { TWishlistContext, WishlistContext } from "@/components/providers/WishListContextProvider";
 import { WishListItem } from "@/components/wishlist/WishListItem";
 
