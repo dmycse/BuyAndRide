@@ -25,7 +25,9 @@ export const MobileSidebar = ({ isOpen, setIsOpen }: MobileSidebarProps) => {
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetContent 
         className="p-4 w-[18rem] max-sm:w-[12rem] bg-primary 
-                [&>button]:ring-0 [&>button]:text-white [&>button>svg]:hover:text-accent" 
+                [&>button]:ring-0 [&>button]:text-white [&>button>svg]:hover:text-accent
+                transition-transform duration-500 ease-in-out 
+                data-[state=open]:translate-x-0 data-[state=closed]:translate-x-full" 
         aria-describedby={undefined}
       >
         <SheetHeader>
