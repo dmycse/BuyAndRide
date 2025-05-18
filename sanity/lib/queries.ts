@@ -40,3 +40,14 @@ export const PRODUCT_QUERY = defineQuery(`
     'categories': categories[]->{name}
   }`
 );
+
+export const WISHLIST_QUERY = defineQuery(`
+  *[_type == "product" && price_id in $ids]{
+    _id,
+    title,
+    images,
+    price,
+    price_id,
+    "slug": slug.current
+  }`
+);
