@@ -11,7 +11,7 @@ type BikeCategoriesProps = {
   bikes: Product[];
 };
 
-const prices = { maxPrice: 900, minPrice: 100};
+const prices = { maxPrice: 2000, minPrice: 600};
 
 
 export const BikeCategories = ({ bikes }: BikeCategoriesProps) => {
@@ -46,7 +46,7 @@ export const BikeCategories = ({ bikes }: BikeCategoriesProps) => {
   }, [category, price, bikes]);
  
   return (
-    <section className='py-2'>
+    <section className='py-2 relative'>
       <div className="custom-container">
         <div className="grid grid-cols-1 lg:grid-cols-[280px+1fr] gap-4">
           <aside className="mb-8 p-4">
