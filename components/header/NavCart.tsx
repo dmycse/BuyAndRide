@@ -9,7 +9,7 @@ export const NavCart = () => {
 
   return (
     <button
-     
+      title='Cart'
       className="relative group cursor-pointer"
       onClick={() => handleCartClick()}
     >
