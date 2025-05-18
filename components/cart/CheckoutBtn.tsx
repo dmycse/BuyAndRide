@@ -1,8 +1,10 @@
+'use client';
+
 import { useShoppingCart } from 'use-shopping-cart';
 
 export const CheckoutBtn = () => {
 
-  const { redirectToCheckout } = useShoppingCart();
+  const { redirectToCheckout,  } = useShoppingCart();
 
 
   const handleCheckout = async () => {
