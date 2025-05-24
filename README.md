@@ -25,6 +25,8 @@
 
 <div align="center">
   <img src='/public/screenshots/bikes_page.png' alt='bike page view' width="500px" />
+  <br />
+  <img src='/public/screenshots/bike_page.png' alt='bike page view' width="500px" />
 </div>
 
 ### <a name="features">App Features</a>
@@ -97,4 +99,4 @@ Frontend:
 </div>
 
 ### <a name="web-link">Web-link</a>
-This repository contains the code corresponding to an in-depth app available on web-link: <a href="buyandride.vercel.app" target="_blank"><b>Buy&Ride</b></a>. 
+This repository contains the code corresponding to an in-depth app available on web-link: <a href="https://buyandride.vercel.app" target="_blank"><b>Buy&Ride</b></a>. 
