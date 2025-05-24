@@ -24,7 +24,7 @@
 - [Web-link to deploy](#web-link)
 
 <div align="center">
-  <img src='/public/screenshots/bikes_page.png' alt='bikes page view' width="500px" />
+  <img src='/public/screenshots/bikes_page.png' alt='bike page view' width="500px" />
 </div>
 
 ### <a name="features">App Features</a>
@@ -42,7 +42,9 @@
 * Fully addaptive and responsive web-app
 * Deploy on Vercel
 
-<img src='/public/screenshots/shopping_cart.png' alt='shopping cart view' width="500px" />
+<div align="center">
+  <img src='/public/screenshots/shopping_cart.png' alt='shopping cart view' width="500px" />
+</div>
 
 ### <a name="setup">Project setup</a>
 1. Clone the repository: <code>git clone https://github.com/dmycse/BuyAndRide</code>
@@ -88,7 +90,7 @@ Frontend:
 </div>
 
 ### <a name="know">Good to know</a>
-* **This app using online conten update thanks Sanity**
+* This app using online conten update thanks Sanity
 
 <div align="center">
   <img src='/public/screenshots/hero_bage_mobile.png' alt='hero page view' height="500px" />
