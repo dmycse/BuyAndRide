@@ -1,9 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
 
-## Getting Started
+  <h3 align="center">Buy&Ride E-commerce Web App</h3>
+  <div>
+    This Web-App buld on 
+    <a href="https://nextjs.org" target="_blank">
+      <b>Next.js v.15+</b> 
+    </a>
+    and 
+    <a href="https://react.dev" target="_blank">
+      <b>React.js v.19</b>
+    </a>
+  </div>
+  <img src='/public/screenshots/main_page.png' alt='main page view' width="500px" />
+</div>
 
-First, run the development server:
+### <a name="table">Content</a>
 
+- [App Features](#features)
+- [Project setup](#setup)
+- [Tech Stack](#tech-stack)
+- [Good to know](#know)
+- [Web-link to deploy](#web-link)
+
+<img src='/public/screenshots/bikes_page.png' alt='main page view' width="500px" />
+
+### <a name="features">App Features</a>
+
+*	Product search and filtering
+*	Product detail page
+*	Product purchase
+*	Adding product to whishlist
+*	Shopping cart
+* Wishlist
+* Product categories
+* Shopping cart management: add/remove products
+* Favorites management: add/remove products
+* Product payment and payment confirmation
+* Fully addaptive and responsive web-app
+* Deploy on Vercel
+
+<img src='/public/screenshots/shopping_cart.png' alt='main page view' width="500px" />
+
+### <a name="setup">Project setup</a>
+1. Clone the repository: <code>git clone https://github.com/dmycse/BuyAndRide</code>
+2. Install dependencies. Run <code>npm install</code>
+3. Run the development server:
 ```bash
 npm run dev
 # or
@@ -13,24 +54,36 @@ pnpm dev
 # or
 bun dev
 ```
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<img src='/public/screenshots/wishlist.png' alt='main page view' width="500px" />
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### <a name="tech-stack">Tech Stack</a>
+Backend:
+| Framework / App / Lib | Description |
+|-------------|-------------|
+| [Next.js](https://nextjs.org) | The React Framework for the Web |
+| [Sanity](https://www.sanity.io/) | The Content Operating System |
+| [Sripe](https://stripe.com/) | Unified, global payments  |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Frontend:
+| Framework / App / Lib | Description |
+|-------------|-------------|
+| [React.js](https://react.dev) | The library for web and native user interfaces |
+| [Typescipt](https://www.typescriptlang.org) | A strongly typed programming language |
+| [Swiper](https://swiperjs.com/) | Mobile Touch Slider |
+| [Schadcn](https://ui.shadcn.com/) | A set of beautifully-designed, accessible components  |
+| [TailwindCSS](https://tailwindcss.com/) | CSS framework for rapidly building custom user interfaces without leaving HTML. |
+| [Git](https://git-scm.com/) | Version Control |
+| [Npm](https://www.npmjs.com/)  | Package manager |
+| [Vercel](https://vercel.com/)  | Provides the developer tools and cloud infrastructure  |
 
-## Learn More
+<img src='/public/screenshots/main_page_mobile.png' alt='main page view' width="500px" />
 
-To learn more about Next.js, take a look at the following resources:
+### <a name="know">Good to know</a>
+* **This app using online conten update thanks Sanity**
+    
+<img src='/public/screenshots/hero_bage_mobile.png' alt='main page view' width="500px" />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### <a name="web-link">Web-link</a>
+This repository contains the code corresponding to an in-depth app available on web-link: <a href="buyandride.vercel.app" target="_blank"><b>Buy&Ride</b></a>. 
